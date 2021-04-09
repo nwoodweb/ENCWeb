@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+
+<meta charset="utf-8">
+
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width">
+<title>
+</title>
+<link rel="stylesheet" href="styleENC.css">
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script>
+  MathJax = {
+    tex: {
+      tags: 'ams'  // should be 'ams', 'none', or 'all'
+    }
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+
+</head>
+
+<body>
+<h1><pre>
+#################################
+# QUANTIFYING QUANTUM MECHANICS #
+#################################
+
+</pre></h1>
+
+<center>
+<p style="color:#33ff33;">
+<pre>
+<blockquote style="color:#33ff33;">
+
+
+ THE UNDERLYING PHYSICAL LAWS NECESSARY FOR THE 
+ MATHEMATICAL THEORY OF A LARGE PART OF PHYSICS AND THE
+ WHOLE OF CHEMISTRY ARE THUS COMPLETELY KNOWN, AND THE
+ DIFFICULTY IS ONLY THAT THE EXACT APPLICATION OF THESE
+ LAWS LEADS TO EQUATIONS MUCH TOO COMPLICATED 
+ TO BE SOLUBLE.
+
+                                        -- <a href="https://www.nobelprize.org/prizes/physics/1933/dirac/biographical/" style="color:#ffb000;">P. A. M. DIRAC, 1929</a>
+</pre>
+<p>Gaussian, a quantum chemistry tool controversial for its proprietary licensing, often interjects quotes at the end of output files. 
+</p>
+</blockquote>
+</p>
+</center>
+<h2><pre>
+*******************
+* DODGING THE WOO *
+*******************
+</pre></h2>
+<p>~ Quantum mechanics is a dense, difficult to visualize, and difficult to teach branch of chemistry and physics, and is unfortunately abused by salespeople to market products and ideas</p>
+
+<p>~ Chemicals, and by proxy, life, is made up of molecules, which are made up of small particles called atoms, which themselves are made up by even smaller particles known as <a href="https://en.wikipedia.org/wiki/Elementary_particle"> elementary particles</a></p> 
+<p>~ Quantum mechanics deals with the elementary particles that comprise atoms, known as protons, neutrons, and electrons.</p>
+
+<p>~ These particles are incredibly small, a one liter water bottle will weigh one kilogram, but a single electron will has a <a href="https://physics.nist.gov/cgi-bin/cuu/Value?me">mass</a> of 9 millionth  trillionth trillionths of a kilogram or:  
+</p>
+<center>
+<p> <i>0.000000000000000000000000000009 kilograms </i></p>
+</center>
+<p>
+~ A series of conjectures, experiments, and mathematical models have lead to the conclusion that classical physics, as described by the likes of James Maxwell, Isaac Newton, and the philosophers of Arabia, Greece, and India, do not apply to these particles. 
+</p>
+<p>~ Below is a video, originally published by PBS, concerning how Max Planck's observations lead to the birth of quantum mechanics</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FXfrncRey-4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>
+~ This had lead to the birth of quantum mechanics, or the physics behind these particles, and how the lead to larger and larger particles, in an interaction known as bonding
+</p> 
+<p>Bonding in molecules is described using probability density wavefunctions, known as orbitals, as described by John Green below</p>
+
+
+
+<h2><pre>
+
+**************************
+* SOLVING THE UNSOLVABLE *
+**************************
+</pre></h2>
+
+<p>~ Quantum mechanics is difficult for mathemeticians to solve with only one particle, and becomes completely impossible when evaluating two ore more particles </p>
+<p>~ Because of this, high performance computing is used, but even the most powerful supercomputers have difficulty with quantum mechanical models</p>
+<p>~ Because of this, with regards to structural biology, scientists will use quantum mechanics to probe specific features, such as tunnels within proteins, the shuttling of electrons throughout a region of a protein, or interactions between ligands and cofactors with the active site of a protein. </p>
+
+<p>~ All biomolecules are constantly bombarded with water molecules, many need water to function to begin with. Therefore, it is of interest to quantum mechanically model water molecules at different states to determine their characteristics.</p>
+<p>~ Below is an excerpt of the output file of ORCA, a free and open source quantum chemistry tool.</p>
+<p>~ Specifically ORCA is using the Ahlrichs-Double Zeta Valence Basis Set (26 equations to evaluate the energies of the molecule in question), in accordance with the principles of Density Functional Theory (an algorith to approximate the energy of the electrons of the water molecule, in their respective orbitals). This took 8 seconds for a single water molecule, computed in a HPC environment </p> 
+<blockquote style="color:#33ff33;">
+<pre>
+
+
+                                 ****************
+                                 * O  R   C   A *
+                                 ****************
+
+           --- An Ab Initio, DFT and Semiempirical electronic structure package ---
+
+
+                  ########################################################
+                  #                         -***-                        #
+                  #               Developed by Frank Neese               #
+                  #           Lehrstuhl fuer Theoretische Chemie         #
+                  #  Institut fuer Physikalische und Theoretische Chemie #
+                  #                    Universitaet Bonn                 #
+                  #                        Germany                       #
+                  #                theochem@thch.uni-bonn.de             #
+                  #                                                      #
+                  #                   All rights reserved                #
+                  #                         -***-                        #
+                  ########################################################
+
+
+                         Program Version 2.6 - Revision 71 -
+
+
+ With contributions from (in alphabetic order):
+   Ute Becker           : Parallelization
+   Dmitry Ganyushin     : Spin-Orbit,Spin-Spin,Magnetic field MRCI
+   Dimitrios Liakos     : RI-MP2 improvements
+   Simone Kossmann      : meta GGA functionals
+   Taras Petrenko       : Resonance Raman, ABS,fluorescence,NRVS
+   Christoph Riplinger  : Improved optimizer, TS searches
+   Frank Wennmohs       : Multiple parts of the code
+
+
+ We gratefully acknowledge several collegues who have allowed us to
+ interface, adapt or use parts of their codes:
+   Stefan Grimme                                : VdW corrections, initial TS optimization
+                                                  and many helpful discussions :-)
+   Markus Reiher, Alexander Wolf and Bernd Hess : otool_dkh (higher order DKH)
+   Andreas Klamt, Michael Diedenhofen           : otool_cosmo (COSMO solvation model)
+   Alain StAmant                                : redundant internal coordinate setup
+   Reinhart Ahlrichs                            : matrix diagonalization, basis sets
+   Frank Weinhold                               : gennbo (NPA and NBO analysis)
+
+
+Your calculation utilizes the basis: Ahlrichs-VDZ
+
+</pre>
+</blockquote>
+<p>~ ORCA outputs always summarize the input file, in this case, water, with each atom partitioned into a three dimensional grid</p>
+<blockquote style="color:#33ff33;">
+<pre>
+================================================================================
+                                       INPUT FILE
+================================================================================
+NAME = H2O_xyz_opt_freq_compound_jobs.inp
+|  1> # 
+|  2> # H2O opt ; all population analyses OFF
+|  3> # 
+|  4> ! RKS RI BP86 SVP SV/J Opt TightSCF NOPOP
+|  5> %base "temp"
+|  6> * xyz 0 1 
+|  7> O       -1.666704747      0.000000000     -2.277536320
+|  8> H       -1.666704747      0.759337000     -1.681493320
+|  9> H       -1.666704747     -0.759337000     -1.681493320
+| 10> * 
+| 11> 
+| 12> # 
+| 13> # H2O freq ; all population analyses ON; coordinates and guess read from the previous job
+| 14> # 
+| 15> $new_job
+| 16> 
+| 17> ! RKS RI BP86 SVP SV/J TightSCF NumFreq ALLPOP MoRead
+| 18> %moinp "temp.gbw"
+| 19> * xyzfile 0 1 
+| 20> 
+| 21>                          ****END OF INPUT****
+================================================================================
+
+
+
+
+</pre>
+</blockquote>
+
+<p>~ Preprocessing is conducted to better comply with Density Functional Theory, once this optimization is complete, ORCA will determine which functions from the basis set to use</p>
+<blockquote style="color:#33ff33;"><pre>
+
+-------------------------------
+AUXILIARY BASIS SET INFORMATION
+-------------------------------
+There are 2 groups of distinct atoms
+
+ Group   1 Type O  : 8s3p3d1f contracted to 6s3p3d1f pattern {311111/111/111/1}
+ Group   2 Type H  : 4s2p contracted to 2s1p pattern {31/2}
+
+Atom   0O   basis set group =>   1
+Atom   1H   basis set group =>   2
+Atom   2H   basis set group =>   2
+
+Checking for AutoStart:
+The File: temp.gbw exists
+Trying to determine its content:
+     ... Fine, the file contains calculation information
+     ... Fine, the calculation information was read
+     ... The file does not contain a basis set - skipping AutoStart
+------------------------------------------------------------------------------
+                           ORCA GTO INTEGRAL CALCULATION
+                           -- RI-GTO INTEGRALS CHOSEN --
+------------------------------------------------------------------------------
+
+                         BASIS SET STATISTICS AND STARTUP INFO
+
+Gaussian basis set:
+ # of primitive gaussian shells          ...   22
+ # of primitive gaussian functions       ...   38
+ # of contracted shells                  ...   12
+ # of contracted basis functions         ...   24
+ Highest angular momentum                ...    2
+ Maximum contraction depth               ...    5
+Auxiliary gaussian basis set:
+ # of primitive gaussian shells          ...   27
+ # of primitive gaussian functions       ...   59
+ # of contracted shells                  ...   19
+ # of contracted aux-basis functions     ...   47
+ Highest angular momentum                ...    3
+ Maximum contraction depth               ...    3
+Ratio of auxiliary to basis functions    ...  1.96
+ One Electron integrals                  ... done
+ Ordering auxiliary basis shells         ... done
+ Integral threshhold             Thresh  ... 3.000e-011
+ Primitive cut-off               TCut    ... 3.000e-012
+ Pre-screening matrix                    ... done
+ Shell pair data                         ... 
+ Ordering of the shell pairs             ... done (   0.000 sec) 78 of 78 pairs
+ Determination of significant pairs      ... done (   0.000 sec)
+ Creation of shell pair data             ... done (   0.000 sec)
+ Storage of shell pair data              ... done (   0.015 sec)
+ Shell pair data done in (   0.015 sec)
+ Computing two index integrals           ... done
+ Choleksy decomposition of the V-matrix  ... done
+
+
+Timings:
+ Total evaluation time                   ...   0.093 sec (  0.002 min)
+ One electron matrix time                ...   0.000 sec (  0.000 min) =  0.0%
+ Schwartz matrix evaluation time         ...   0.000 sec (  0.000 min) =  0.0%
+ Two index repulsion integral time       ...   0.000 sec (  0.000 min) =  0.0%
+ Cholesky decomposition of V             ...   0.000 sec (  0.000 min) =  0.0%
+
+
+
+
+
+</pre></blockquote>
+<p> ~ Once this step is complete, ORCA will run these functions through a multiple-cycle algorithm, which is often determined by the basis set and the theory the user wishes to comply to </p>
+
+<blockquote style="color:#33ff33;"><pre>
+
+
+------------------------------
+INITIAL GUESS: MODEL POTENTIAL
+------------------------------
+Loading Hartree-Fock densities                     ... done
+Calculating cut-offs                               ... done
+Setting up the integral package                    ... done
+Initializing the effective Hamiltonian             ... done
+Starting the Coulomb interaction                   ... done (   0.0 sec)
+Starting the XC term evaluation                    ... done (   0.2 sec)
+  promolecular density results
+     # of electrons  =      9.996459369
+     EX              =     -8.780328300
+     EC              =     -0.351951797
+     EX+EC           =     -9.132280097
+Transforming the Hamiltonian                       ... done (   0.0 sec)
+Diagonalizing the Hamiltonian                      ... done (   0.0 sec)
+Back transforming the eigenvectors                 ... done (   0.0 sec)
+Now organizing SCF variables                       ... done
+                      ------------------
+                      INITIAL GUESS DONE (   0.2 sec)
+                      ------------------
+--------------
+SCF ITERATIONS
+--------------
+ITER       Energy         Delta-E        Max-DP      RMS-DP      [F,P]     Damp
+               ***  Starting incremental Fock matrix formation  ***
+  0    -76.2724914852   0.000000000000 0.09051623  0.00977659  0.2898489 0.7000
+  1    -76.3175597673  -0.045068282097 0.04873674  0.00519443  0.1042095 0.7000
+                               ***Turning on DIIS***
+  2    -76.3304238632  -0.012864095820 0.04273026  0.00493381  0.0134901 0.0000
+  3    -76.3561277248  -0.025703861661 0.02668155  0.00293696  0.0602411 0.0000
+  4    -76.3600567428  -0.003929017965 0.00511797  0.00068805  0.0078445 0.0000
+  5    -76.3601853451  -0.000128602321 0.00208858  0.00023155  0.0014283 0.0000
+  6    -76.3601937836  -0.000008438488 0.00168204  0.00014971  0.0004665 0.0000
+  7    -76.3601949625  -0.000001178891 0.00005987  0.00000561  0.0001045 0.0000
+                 **** Energy Check signals convergence ****
+
+               *****************************************************
+               *                     SUCCESS                       *
+               *           SCF CONVERGED AFTER   8 CYCLES          *
+               *****************************************************
+
+
+
+
+
+</pre></blockquote>
+
+<p>~ At this overwhelming point, the excitation energies will be computed for the molecule</p>
+
+
+<blockquote style="color:#33ff33;"><pre>
+
+----------------
+ORBITAL ENERGIES
+----------------
+
+  NO   OCC          E(Eh)            E(eV)
+   0   2.0000     -18.759048      -510.4596
+   1   2.0000      -0.893243       -24.3064
+   2   2.0000      -0.460766       -12.5381
+   3   2.0000      -0.310894        -8.4599
+   4   2.0000      -0.232594        -6.3292
+   5   0.0000       0.032823         0.8932
+   6   0.0000       0.108241         2.9454
+   7   0.0000       0.517077        14.0704
+   8   0.0000       0.575518        15.6606
+   9   0.0000       0.861473        23.4419
+  10   0.0000       0.863898        23.5079
+  11   0.0000       0.955354        25.9965
+  12   0.0000       1.040097        28.3025
+  13   0.0000       1.283914        34.9371
+  14   0.0000       1.346081        36.6287
+  15   0.0000       1.484061        40.3834
+  16   0.0000       1.719828        46.7989
+  17   0.0000       2.122974        57.7691
+  18   0.0000       2.168365        59.0042
+  19   0.0000       2.870370        78.1067
+  20   0.0000       2.909380        79.1682
+  21   0.0000       3.092822        84.1600
+  22   0.0000       3.396156        92.4141
+  23   0.0000       3.721685       101.2722
+
+
+
+</pre></blockquote>
+<p>~ ORCA will print a concluding summary showing the computer uptime to calculate, as well as a statement showing the program has terminated with no fatal errors (some tools will report this as having an error code of 0).</p>
+<blockquote style="color:#33ff33;"><pre>
+
+
+Timings for individual modules:
+
+Sum of individual times         ...       46.794 sec (=   0.780 min)
+GTO integral calculation        ...        9.155 sec (=   0.153 min)  19.6 %
+SCF iterations                  ...       27.468 sec (=   0.458 min)  58.7 %
+SCF Gradient evaluation         ...       10.171 sec (=   0.170 min)  21.7 %
+
+
+
+                             ****ORCA TERMINATED NORMALLY****
+TOTAL RUN TIME: 0 days 0 hours 1 minutes 12 seconds 48 msec
+
+
+
+</pre></blockquote>
+<p>~ Ultimately, quantum mechanical computations provide an accurate analysis of biomolecules, given that the scope of this analysis is realistic.</p>
+
+
+
+<span style="background-color: #ffb000;color: black;">(END)</span>
+<p>
+<a href="./NotARealRss.xml">Subscribe for Updates</a>
+</p>
+
+</body>
+
+ </html>

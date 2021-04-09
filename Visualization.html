@@ -1,0 +1,162 @@
+<html>
+</head>
+
+<meta charset="utf-8">
+
+<title>
+Computational Str.Bio. Visualizing Biomolecules
+</title>
+<link rel="stylesheet" href="styleENC.css">
+</head>
+
+<body>
+<h1>
+<pre>
+############################
+# VISUALIZING BIOMOLECULES #
+############################
+</pre>
+</h1>
+<center>
+<a href="https://www.nwoodweb.xyz/ENCPortfolioWeb/Main.html">Main Page    </a> &nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://www.nwoodweb.xyz/ENCPortfolioWeb/MolDynamics.html">    Modeling Complex Interactions    </a> &nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://www.nwoodweb.xyz/ENCPortfolioWeb/QuantumMechanics.html">     Quantifying Quantum Mechanics    </a> &nbsp;&nbsp;&nbsp;&nbsp;
+</center>
+<h2><pre>
+*********************************
+* VISUALIZING PROTEINS IN PYMOL *
+*********************************
+</pre></h2>
+<p>~ Proteins are mainly imaged using three means: Cryo-Electron Microscopy (CryoEM), Homology Modeling, and X-Ray Crystallography.</p>
+<p>~ In order to store this imaging data for future use, protein (as well as other macromolecules) are stored as Protein DataBank files, or PDBs.</p>
+
+<p>~ PDB files are text-files which provide basic meta-data identifying the compound, the academic publication the image is from, and the biological source of the compound.</p>
+<p>~ All PDB files are given a unique acession code, known as a PDBID</p>
+<p>~ The example below is a PDB file of Human Haemoglobin <a href="https://www.wwpdb.org/pdb?id=pdb_00001a3n">(1A3N)</a> the protein responsible for giving erythrocytes (red blood cells, or RBCs) their ability to transport oxygen throughout the body. </p>
+
+<p>
+<pre>
+<blockquote style="color: #33ff33;">
+HEADER    OXYGEN TRANSPORT                        22-JAN-98   1A3N              
+TITLE     DEOXY HUMAN HEMOGLOBIN                                                
+COMPND    MOL_ID: 1;                                                            
+COMPND   2 MOLECULE: HEMOGLOBIN (ALPHA CHAIN);                                  
+COMPND   3 CHAIN: A, C;                                                         
+COMPND   4 MOL_ID: 2;                                                           
+COMPND   5 MOLECULE: HEMOGLOBIN (BETA CHAIN);                                   
+COMPND   6 CHAIN: B, D                                                          
+SOURCE    MOL_ID: 1;                                                            
+SOURCE   2 ORGANISM_SCIENTIFIC: HOMO SAPIENS;                                   
+SOURCE   3 ORGANISM_COMMON: HUMAN;                                              
+SOURCE   4 ORGANISM_TAXID: 9606;                                                
+SOURCE   5 TISSUE: BLOOD;                                                       
+SOURCE   6 CELL: RED CELL;                                                      
+SOURCE   7 MOL_ID: 2;                                                           
+SOURCE   8 ORGANISM_SCIENTIFIC: HOMO SAPIENS;                                   
+SOURCE   9 ORGANISM_COMMON: HUMAN;                                              
+SOURCE  10 ORGANISM_TAXID: 9606;                                                
+SOURCE  11 TISSUE: BLOOD;                                                       
+SOURCE  12 CELL: RED CELL                                                       
+KEYWDS    OXYGEN TRANSPORT, HEME, RESPIRATORY PROTEIN, ERYTHROCYTE              
+EXPDTA    X-RAY DIFFRACTION                                                     
+AUTHOR    J.TAME,B.VALLONE                                                      
+REVDAT   2   24-FEB-09 1A3N    1       VERSN                                    
+REVDAT   1   29-APR-98 1A3N    0                                                
+JRNL        AUTH   J.R.TAME,B.VALLONE                                           
+JRNL        TITL   THE STRUCTURES OF DEOXY HUMAN HAEMOGLOBIN AND THE            
+JRNL        TITL 2 MUTANT HB TYRALPHA42HIS AT 120 K.                            
+JRNL        REF    ACTA CRYSTALLOGR.,SECT.D      V.  56   805 2000              
+JRNL        REFN                   ISSN 0907-4449                               
+</blockquote>
+</pre>
+</p>
+<p>~ Included within a PDB is also data concerning how the compound in question was analyzed and imaged to begin with, and often includes possible errors in the analysis, such as missing atoms, or atoms that are anomolously close to each other.</p>
+
+<p>  
+<pre>
+<blockquote style="color:#33ff33;">
+REMARK 200 EXPERIMENTAL DETAILS                                                 
+REMARK 200  EXPERIMENT TYPE                : X-RAY DIFFRACTION                  
+REMARK 200  DATE OF DATA COLLECTION        : MAY-97                             
+REMARK 200  TEMPERATURE           (KELVIN) : 120                                
+REMARK 200  PH                             : NULL                               
+REMARK 200  NUMBER OF CRYSTALS USED        : 1                                  
+REMARK 200                                                                      
+REMARK 200  SYNCHROTRON              (Y/N) : N                                  
+REMARK 200  RADIATION SOURCE               : NULL                               
+REMARK 200  BEAMLINE                       : NULL                               
+REMARK 200  X-RAY GENERATOR MODEL          : NULL                               
+REMARK 200  MONOCHROMATIC OR LAUE    (M/L) : M                                  
+REMARK 200  WAVELENGTH OR RANGE        (A) : 1.5418                             
+REMARK 200  MONOCHROMATOR                  : NI FILTER                          
+REMARK 200  OPTICS                         : MIRROR          
+
+
+
+REMARK 500                                                                      
+REMARK 500 GEOMETRY AND STEREOCHEMISTRY                                         
+REMARK 500 SUBTOPIC: CLOSE CONTACTS IN SAME ASYMMETRIC UNIT                     
+REMARK 500                                                                      
+REMARK 500 THE FOLLOWING ATOMS ARE IN CLOSE CONTACT.                            
+REMARK 500                                                                      
+REMARK 500  ATM1  RES C  SSEQI   ATM2  RES C  SSEQI           DISTANCE          
+REMARK 500   NZ   LYS B    66     O    HOH B   243              0.96            
+REMARK 500   O    HOH D   248     O    HOH D   256              2.01            
+REMARK 500                                                                      
+REMARK 500 REMARK: NULL                                                         
+REMARK 500                                                                      
+</blockquote>
+</pre>
+</p>
+
+<p>~ Included in every PDB is a table of every atom with its corresponding amino acid (the building block of a protein), and its coordinate position. Also included is a table of the protein's amino acid sequence. This allows the protein to entirely be reconstructed from its PDB file, down to the atom.</p>
+
+<p>
+<pre>
+<blockquote style="color:#33ff33;">
+SEQRES   1 A  141  VAL LEU SER PRO ALA ASP LYS THR ASN VAL LYS ALA ALA          
+SEQRES   2 A  141  TRP GLY LYS VAL GLY ALA HIS ALA GLY GLU TYR GLY ALA          
+SEQRES   3 A  141  GLU ALA LEU GLU ARG MET PHE LEU SER PHE PRO THR THR          
+
+
+HELIX    1   1 PRO A    4  SER A   35  1                                  32    
+HELIX    2   2 PRO A   37  TYR A   42  5                                   6    
+
+ATOM      1  N   VAL A   1      10.720  19.523   6.163  1.00 21.36           N  
+ATOM      2  CA  VAL A   1      10.228  20.761   6.807  1.00 24.26           C  
+ATOM      3  C   VAL A   1       8.705  20.714   6.878  1.00 18.62           C  
+ATOM      4  O   VAL A   1       8.164  20.005   6.015  1.00 19.87           O  
+ATOM      5  CB  VAL A   1      10.602  22.000   5.966  1.00 27.19           C  
+ATOM      6  CG1 VAL A   1      10.307  23.296   6.700  1.00 31.86           C  
+ATOM      7  CG2 VAL A   1      12.065  21.951   5.544  1.00 31.74           C  
+ATOM      8  N   LEU A   2       8.091  21.453   7.775  1.00 16.19           N  
+
+
+</blockquote>
+</pre>
+</p>
+
+<p>~ The problem with storing PDBs, is that the the file is entirely numbers and terms!</p>
+<p>~ While computers can handle this information easily , it is diffcult for people to make sense of </p>
+<p>~ To resolve this, we have to use tools to visualize this data. The most famous tool is <a href="https://pymol.org/2/">PyMOL</a>, a Python and C++ dependent macromolecule visualization platform </p>
+<p>~ PyMOL takes a PDB, and uses the Open Graphics Library <a href="https://www.opengl.org/">(OpenGL)</a>, to reconstruct a highly accurate image of the macromolecule in question</p> 
+<p>~ PyMOL accepts plugins, allowing for niche visualizations or on-demand computational analysis on the PDB structure</p>
+<center>
+<figure>
+<img src="./pymol.png" alt= "Screenshot of PyMOL, default, with no plugins" style="float:center;width:300px;height:200px;">
+<figcaption style="color:#ffb000;">Screenshot of PyMOL, with Hemoglobin (PDB 1A3N)</figcaption>
+</figure>
+</center>
+
+<p> ~ The ultimate goal is of PyMOL is to create accurate representations of macromolecules, like the aforementioned Hemoglobin (PDB 1A3N), which has been visualized below, with the oxygen binding sites in green</p> 
+<center>
+<img src="./1a3nHemo.gif" alt="Gromacs, a FOSS molecular dynamics utility for protein and viral anaylsis"
+
+style="float:center;width:500px;height:200px;">
+</center>
+
+<span style="background-color: #ffb000;color: black;">(END)</span>
+<p></p>
+<p><a href="./NotARealrSS.Xml">Subscribe Here</a></p>
+</body>
+</html>
