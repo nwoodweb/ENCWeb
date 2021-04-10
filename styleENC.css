@@ -1,6 +1,5 @@
 body{
 	background-color: black;
-
 }
 blockquote {
   display: block;
@@ -14,18 +13,19 @@ blockquote {
 
 h1 {
 	color: #ffcc00;
-	font-size: 16px;
+	font-size:24px ;
+	font: Inconsolata, monospace;
 	text-align: center;
 }
 
 h2{
 	color: #ffb000;
-	font-size:16px;
+	font-size:19px;
 	font: Inconsolata, monospace; 
 }
 p { 
 	color: #ffb000;
-	font-size: 12px;
+	font-size:18px;
 	font: Incosolata, monospace;
 
 }
@@ -35,10 +35,23 @@ hr.style1 {
 
 a:link{
 	color: #33ff33;
+	font-size:18px;
 	}
 a:visited{
 	color: #33ff33;
+	font-size:18px;
 	}
+a{
+	color:#33ff33;
+	font-size:18px;
+}
 ul{
 	color: #ffb000;
+	font-size:18px;
+	}
+blockquote{
+	font-size:13px;
+	}
+figcaption{
+	font-size:13px;
 	}
