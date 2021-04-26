@@ -1,0 +1,36 @@
+body{
+	background-color: #002b36;
+}
+
+h1{
+	color: #fdf6e3;
+	font-size: 40px;  
+	text-align: center;
+	}
+h2{
+	color:#dc322f ;
+	font-size: 35px;
+	}
+h3{
+	color: #b58900;
+	font-size: 30px;
+	}
+h4{
+	color: #268bd2;
+	font-size: 25px;
+	}
+
+p{
+	color: #fdf6e3; 
+	font-size: 20px; 
+	}
+
+ul{
+	color: #fdf6e3;
+	font-size: 20px;
+	}
+figcaption{
+	color::#6c71c4;
+	font-size:18px;
+
+}
